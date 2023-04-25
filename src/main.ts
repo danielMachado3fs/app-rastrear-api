@@ -1,8 +1,8 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import 'dotenv/config';
 import { ValidationPipe } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import 'dotenv/config';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -20,11 +20,14 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document, {
+    //rota para acessar documentação swegger "api/docs"
     swaggerOptions: {
       defaultModelsExpandDepth: -1,
       deepLinking: true,
     },
   });
+  //fim configuração swegger
+
   await app.listen(3000); //porta para acessar a aplicação
 }
 bootstrap();
