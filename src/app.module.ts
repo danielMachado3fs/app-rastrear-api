@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
+import 'dotenv/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuarioModule } from './app/usuario/usuario.module';
-import 'dotenv/config';
 import { DatabaseModule } from './config/database/database.module';
 
 @Module({
@@ -22,10 +22,11 @@ import { DatabaseModule } from './config/database/database.module';
     //   entities: [],
     //   synchronize: true,
     // }),
-    UsuarioModule,
     DatabaseModule,
+    UsuarioModule,
   ],
   controllers: [AppController],
   providers: [AppService],
+  exports: [DatabaseModule]
 })
 export class AppModule {}

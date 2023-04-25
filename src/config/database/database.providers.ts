@@ -1,17 +1,19 @@
+import { Usuario } from 'src/app/usuario/usuario.entity';
 import { DataSource } from 'typeorm';
 import { DATA_SOURCE } from '../constants';
 
 let config: any;
 if (process.env.NODE_ENV != 'test') {
   config = {
-    database: 'app-scf',
+    database: 'app_scf',
     type: 'mariadb',
     username: 'root',
     password: '',
     host: 'localhost',
     port: 3306,
-    entities: [__dirname + '/src/**/*.entity{.ts,.js}'],
-    migrations: [__dirname + '/src/**/*.migrations{.ts,.js}'],
+    entities: [Usuario],
+    // entities: [__dirname + '/src/**/*.entity.{js,ts}'],
+    // migrations: [__dirname + '/src/**/*.migrations{.ts,.js}'],
     // database: process.env.DATABASE_NAME,
     // type: process.env.DATABASE_TYPE,
     // username: process.env.DATABASE_USERNAME,
@@ -35,7 +37,8 @@ export const databaseProviders = [
       return connectionSource
         .initialize()
         .then(() => {
-          console.log('DataSource foi inicializado');
+          // console.log(connectionSource);
+          return connectionSource;
         })
         .catch((err) => {
           console.error('Erro durante a inicialização do DataSource', err);
