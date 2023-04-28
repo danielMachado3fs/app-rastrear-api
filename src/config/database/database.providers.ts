@@ -1,4 +1,5 @@
-import { Usuario } from 'src/app/usuario/usuario.entity';
+import { Grupo } from 'src/app/grupo/entities/grupo.entity';
+import { Usuario } from 'src/app/usuario/entities/usuario.entity';
 import { DataSource } from 'typeorm';
 import { DATA_SOURCE } from '../constants';
 
@@ -11,7 +12,7 @@ if (process.env.NODE_ENV != 'test') {
     password: '',
     host: 'localhost',
     port: 3306,
-    entities: [Usuario],
+    entities: [Usuario, Grupo],
     // entities: [__dirname + '/src/**/*.entity.{js,ts}'],
     // migrations: [__dirname + '/src/**/*.migrations{.ts,.js}'],
     // database: process.env.DATABASE_NAME,

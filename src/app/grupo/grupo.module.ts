@@ -1,0 +1,12 @@
+import { Module } from '@nestjs/common';
+import { DatabaseModule } from 'src/config/database/database.module';
+import { grupoProviders } from './entities/grupo.providers';
+import { GrupoController } from './grupo.controller';
+import { GrupoService } from './grupo.service';
+
+@Module({
+  imports: [DatabaseModule],
+  controllers: [GrupoController],
+  providers: [GrupoService, ...grupoProviders]
+})
+export class GrupoModule {}
