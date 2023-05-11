@@ -35,15 +35,14 @@ export const databaseProviders = [
   {
     provide: DATA_SOURCE,
     useFactory: async () => {
-      return connectionSource
-        .initialize()
-        .then(() => {
-          // console.log(connectionSource);
-          return connectionSource;
-        })
-        .catch((err) => {
-          console.error('Erro durante a inicialização do DataSource', err);
-        });
+      return connectionSource.initialize()
+        // .then(() => {
+        //   // console.log(connectionSource);
+        //   return connectionSource;
+        // })
+        // .catch((err) => {
+        //   console.error('Erro durante a inicialização do DataSource', err);
+        // });
     },
   },
 ];
