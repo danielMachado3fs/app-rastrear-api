@@ -1,7 +1,9 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { Type } from 'class-transformer';
-import { IsEmail, IsNotEmpty, IsObject, IsString, MinLength, ValidateNested } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNotEmptyObject, IsObject, IsString, MinLength, ValidateNested } from 'class-validator';
 import { EnderecoDto } from 'src/common/endereco';
+import { Match } from 'src/decorators/match.decorator';
+import { Grupo } from '../grupo/entities/grupo.entity';
 
 export class CreateUsuarioDto {
   @IsString()
@@ -18,7 +20,11 @@ export class CreateUsuarioDto {
   senha: string;
 
   @IsObject()
-  grupo: string
+  @IsNotEmpty()
+  @IsNotEmptyObject()
+  @Type(() => Grupo)
+  @ValidateNested()
+  grupo: Grupo;
 
   @IsObject()
   @Type(() => EnderecoDto)
@@ -26,3 +32,14 @@ export class CreateUsuarioDto {
   endereco: EnderecoDto;
 }
 export class UpdateUsuarioDto extends PartialType(CreateUsuarioDto) {}
+
+export class AlterarSenhaDto {
+  @IsString()
+  @IsNotEmpty()
+  senha: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @Match('senha')
+  senhaConfirmacao: string;
+}
