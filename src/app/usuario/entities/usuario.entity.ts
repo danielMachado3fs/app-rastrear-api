@@ -1,4 +1,4 @@
-import { Endereco } from 'src/common/endereco';
+import { Endereco, IEndereco } from 'src/common/endereco';
 import {
   Column,
   CreateDateColumn,
@@ -8,10 +8,19 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Grupo } from '../../grupo/entities/grupo.entity';
+import { Grupo, IGrupo } from '../../grupo/entities/grupo.entity';
+
+export interface IUsuario {
+  id?: number;
+  nome: string;
+  email: string;
+  senha: string;
+  endereco: IEndereco;
+  grupo: IGrupo;
+}
 
 @Entity('usuarios')
-export class Usuario {
+export class Usuario implements IUsuario {
   @PrimaryGeneratedColumn()
   id: number;
 

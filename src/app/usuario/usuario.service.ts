@@ -1,11 +1,16 @@
 import { Inject, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { CommonPropsBuscar, CommonPropsCriar, CommonPropsDeletar, CommonPropsEditar } from 'src/common/common';
+import {
+    CommonPropsBuscar,
+    CommonPropsCriar,
+    CommonPropsDeletar,
+    CommonPropsEditar,
+} from 'src/common/common';
 import { USUARIO_REPOSITORY } from 'src/config/constants';
 import { RegistroExistenteException } from 'src/exceptions/registro-existente.exception';
 import { RegistroNaoEncontradoException } from 'src/exceptions/registro-inexistente.exception';
 import { FindManyOptions, In, Like, Not, Repository } from 'typeorm';
-import { tratarFindOptions } from '../utils/helpers';
+import { tratarFindOptions } from '../../utils/helpers';
 import { Usuario } from './entities/usuario.entity';
 import {
     AlterarSenhaDto,
@@ -19,7 +24,7 @@ export class UsuarioService {
         @Inject(USUARIO_REPOSITORY) private model: Repository<Usuario>,
     ) {}
 
-    async criar({body, transaction}: CommonPropsCriar<CreateUsuarioDto>) {
+    async criar({ body, transaction }: CommonPropsCriar<CreateUsuarioDto>) {
         const model = transaction.manager.getRepository(Usuario);
         const exist = model.findOne({ where: { email: body.email } });
         if (exist) {
@@ -35,7 +40,11 @@ export class UsuarioService {
         return model.save(body);
     }
 
-    async editar({ id, body, transaction }: CommonPropsEditar<UpdateUsuarioDto>) {
+    async editar({
+        id,
+        body,
+        transaction,
+    }: CommonPropsEditar<UpdateUsuarioDto>) {
         const model = transaction.manager.getRepository(Usuario);
         const usuario = model.findOne({ where: { id: id } });
         if (!usuario) {
@@ -67,7 +76,8 @@ export class UsuarioService {
 
     async buscar(props: CommonPropsBuscar<Usuario> & { id: number }) {
         let model = this.model;
-        if (props?.transaction) model = props.transaction.manager.getRepository(Usuario);
+        if (props?.transaction)
+            model = props.transaction.manager.getRepository(Usuario);
         let opcoes: FindManyOptions<Usuario> = {
             relations: { grupo: true },
             select: {
@@ -90,7 +100,8 @@ export class UsuarioService {
 
     async listar(props: CommonPropsBuscar<Usuario>) {
         let model = this.model;
-        if (props?.transaction) model = props.transaction.manager.getRepository(Usuario);
+        if (props?.transaction)
+            model = props.transaction.manager.getRepository(Usuario);
         let opcoes: FindManyOptions<Usuario> = {
             relations: { grupo: true },
             select: {
@@ -107,7 +118,7 @@ export class UsuarioService {
         return model.find(opcoes);
     }
 
-    async deletear({id, transaction}: CommonPropsDeletar) {
+    async deletear({ id, transaction }: CommonPropsDeletar) {
         const model = transaction.manager.getRepository(Usuario);
         const usuario = this.model.findOne({ where: { id: id } });
         if (!usuario) {

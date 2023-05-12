@@ -5,12 +5,14 @@ import { AppService } from './app.service';
 import { GrupoModule } from './app/grupo/grupo.module';
 import { UsuarioModule } from './app/usuario/usuario.module';
 import { DatabaseModule } from './config/database/database.module';
+import { VeiculoModule } from './app/veiculo/veiculo.module';
 
 @Module({
   imports: [
     DatabaseModule,
     UsuarioModule,
-    GrupoModule
+    GrupoModule,
+    VeiculoModule
   ],
   controllers: [AppController],
   providers: [AppService],

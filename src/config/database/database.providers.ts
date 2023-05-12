@@ -5,6 +5,7 @@ import { DATA_SOURCE } from '../constants';
 
 let config: any;
 if (process.env.NODE_ENV != 'test') {
+  console.log([__dirname + '/../migrations/**/*{.ts,.js}']);
   config = {
     database: 'app_scf',
     type: 'mariadb',
@@ -14,7 +15,9 @@ if (process.env.NODE_ENV != 'test') {
     port: 3306,
     entities: [Usuario, Grupo],
     // entities: [__dirname + '/src/**/*.entity.{js,ts}'],
-    // migrations: [__dirname + '/src/**/*.migrations{.ts,.js}'],
+    migrations: [__dirname + '/../../migrations/*{.ts,.js}'],
+    synchronize: false,
+    migrationsRun: false,
     // database: process.env.DATABASE_NAME,
     // type: process.env.DATABASE_TYPE,
     // username: process.env.DATABASE_USERNAME,
@@ -23,7 +26,7 @@ if (process.env.NODE_ENV != 'test') {
     // port: Number(process.env.PORT),
     // entities: [__dirname + process.env.ENTITIES],
     // migrations: [__dirname + process.env.MIGRATIONS],
-    sincronize: true,
+    // sincronize: true,
   };
 }
 
