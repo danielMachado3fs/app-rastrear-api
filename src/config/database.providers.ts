@@ -1,11 +1,11 @@
 import { Grupo } from 'src/app/grupo/entities/grupo.entity';
 import { Usuario } from 'src/app/usuario/entities/usuario.entity';
 import { DataSource } from 'typeorm';
-import { DATA_SOURCE } from '../constants';
+import { DATA_SOURCE } from './constants';
 
 let config: any;
 if (process.env.NODE_ENV != 'test') {
-  console.log([__dirname + '/../migrations/**/*{.ts,.js}']);
+  console.log([__dirname + '/src/migrations/**/*{.ts,.js}']);
   config = {
     database: 'app_scf',
     type: 'mariadb',
@@ -14,9 +14,9 @@ if (process.env.NODE_ENV != 'test') {
     host: 'localhost',
     port: 3306,
     entities: [Usuario, Grupo],
-    // entities: [__dirname + '/src/**/*.entity.{js,ts}'],
-    migrations: [__dirname + '/../../migrations/*{.ts,.js}'],
-    synchronize: false,
+    // entities: [__dirname + '/../../**/*.entity{.ts,.js}'],
+    // migrations: ['../../migrations/**/*.js'],
+    synchronize: true,
     migrationsRun: false,
     // database: process.env.DATABASE_NAME,
     // type: process.env.DATABASE_TYPE,

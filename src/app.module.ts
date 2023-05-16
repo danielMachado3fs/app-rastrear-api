@@ -4,8 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GrupoModule } from './app/grupo/grupo.module';
 import { UsuarioModule } from './app/usuario/usuario.module';
-import { DatabaseModule } from './config/database/database.module';
 import { VeiculoModule } from './app/veiculo/veiculo.module';
+import { DatabaseModule } from './config/database.module';
 
 @Module({
   imports: [
