@@ -1,14 +1,14 @@
 import { PartialType } from "@nestjs/mapped-types";
 import { IsArray, IsNotEmpty, IsOptional, IsString } from "class-validator";
 
-export class CreateGrupoDto {
+export class CreateRoleDto {
   @IsNotEmpty()
   @IsString()
   nome: string;
 
   @IsOptional()
   @IsArray()
-  permissoes: string[]
+  permissions: string[]
 }
 
-export class UpdateGrupoDto extends PartialType(CreateGrupoDto) {}
+export class UpdateRoleDto extends PartialType(CreateRoleDto) {}

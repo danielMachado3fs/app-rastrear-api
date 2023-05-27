@@ -1,14 +1,14 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { Type } from 'class-transformer';
 import { IsEmail, IsNotEmpty, IsNotEmptyObject, IsObject, IsString, MinLength, ValidateNested } from 'class-validator';
-import { EnderecoDto } from 'src/common/endereco';
+import { AdressDto } from 'src/common/endereco';
 import { Match } from 'src/decorators/match.decorator';
-import { Grupo } from '../grupo/entities/grupo.entity';
+import { Role } from '../grupo/entities/role.entity';
 
-export class CreateUsuarioDto {
+export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
-  nome: string;
+  name: string;
   
   @IsEmail()
   @IsNotEmpty()
@@ -17,29 +17,29 @@ export class CreateUsuarioDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(6)
-  senha: string;
+  password: string;
 
   @IsObject()
   @IsNotEmpty()
   @IsNotEmptyObject()
-  @Type(() => Grupo)
+  @Type(() => Role)
   @ValidateNested()
-  grupo: Grupo;
+  role: Role;
 
   @IsObject()
-  @Type(() => EnderecoDto)
+  @Type(() => AdressDto)
   @ValidateNested()
-  endereco: EnderecoDto;
+  adress: AdressDto;
 }
-export class UpdateUsuarioDto extends PartialType(CreateUsuarioDto) {}
+export class UpdateUserDto extends PartialType(CreateUserDto) {}
 
-export class AlterarSenhaDto {
+export class UpdatePasswordDto {
   @IsString()
   @IsNotEmpty()
-  senha: string;
+  password: string;
 
   @IsString()
   @IsNotEmpty()
-  @Match('senha')
-  senhaConfirmacao: string;
+  @Match('password')
+  confirmPassword: string;
 }

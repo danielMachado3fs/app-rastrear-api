@@ -2,7 +2,7 @@ import { Transform } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator';
 import { Column } from 'typeorm';
 
-export interface IEndereco {
+export interface IAdress {
     logradouro: string;
     cep: string;
     estado: string;
@@ -12,7 +12,7 @@ export interface IEndereco {
     complemento?: string;
 }
 
-export class Endereco implements IEndereco {
+export class Adress implements IAdress {
     @Column({length: 255, nullable: true, default: null})
     logradouro: string;
     @Column({length: 20, nullable: true, default: null})
@@ -29,44 +29,44 @@ export class Endereco implements IEndereco {
     complemento?: string;
 }
 
-export class EnderecoDto implements IEndereco {
+export class AdressDto implements IAdress {
     @IsString()
     @MaxLength(255)
-    @IsNotEmpty({ groups: ['criar'] })
+    @IsNotEmpty({ groups: ['create'] })
     @IsOptional({ groups: ['atualizar'] })
     logradouro: string;
 
     @IsString()
     @MaxLength(20)
-    @IsNotEmpty({ groups: ['criar'] })
+    @IsNotEmpty({ groups: ['create'] })
     @IsOptional({ groups: ['atualizar'] })
     @Transform(({ value }) => value?.replace(/[^0-9]/g, ''))
     cep: string;
 
     @IsString()
     @MaxLength(4)
-    @IsNotEmpty({ groups: ['criar'] })
+    @IsNotEmpty({ groups: ['create'] })
     @IsOptional({ groups: ['atualizar'] })
     @Transform(({ value }) => value?.toUpperCase())
     estado: string;
 
     @IsString()
     @MaxLength(255)
-    @IsNotEmpty({ groups: ['criar'] })
+    @IsNotEmpty({ groups: ['create'] })
     @IsOptional({ groups: ['atualizar'] })
     @Transform(({ value }) => value?.toUpperCase())
     cidade: string;
 
     @IsString()
     @MaxLength(255)
-    @IsNotEmpty({ groups: ['criar'] })
+    @IsNotEmpty({ groups: ['create'] })
     @IsOptional({ groups: ['atualizar'] })
     @Transform(({ value }) => value?.toUpperCase())
     bairro: string;
 
     @IsString()
     @MaxLength(255)
-    @IsNotEmpty({ groups: ['criar'] })
+    @IsNotEmpty({ groups: ['create'] })
     @IsOptional({ groups: ['atualizar'] })
     @Transform(({ value }) => value?.toUpperCase())
     numero: string;

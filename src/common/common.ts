@@ -4,20 +4,20 @@ export interface CommonProps {
   transaction: QueryRunner;
 }
 
-export interface CommonPropsCriar<T> extends CommonProps {
+export interface CommonPropsCreate<T> extends CommonProps {
   body: T;
 }
 
-export interface CommonPropsDeletar extends CommonProps {
+export interface CommonPropsDelete extends CommonProps {
   id: number
 }
 
-export interface CommonPropsEditar<T> extends CommonProps {
+export interface CommonPropsUpdate<T> extends CommonProps {
   id: number;
   body: T;
 }
 
-export interface CommonPropsBuscar<T> extends Partial<CommonProps>{
-  id: number | number[];
+export interface CommonPropsFind<T> extends Partial<CommonProps>{
+  id?: number | number[];
   query?: FindManyOptions<T>;
 }

@@ -1,11 +1,11 @@
 import { DATA_SOURCE, VEICULO_REPOSITORY } from 'src/config/constants';
 import { DataSource } from 'typeorm';
-import { Veiculo } from './veiculo.entity';
+import { Vehicle } from './vehicle.entity';
 
-export const veiculoProviders = [
+export const vehicleProviders = [
   {
     provide: VEICULO_REPOSITORY,
-    useFactory: (dataSource: DataSource) => dataSource.getRepository(Veiculo),
+    useFactory: (dataSource: DataSource) => dataSource.getRepository(Vehicle),
     inject: [DATA_SOURCE],
   },
 ];

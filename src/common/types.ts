@@ -1,6 +1,8 @@
 
-export const tiposStatus = ['ativo', 'inativo'] as const;
-export const tiposVeiculos = ['passeio', 'caminhao', 'carreta'] as const;
+export const typesStatus = ['ativo', 'inativo'] as const;
+export const typesVehicles = ['passeio', 'caminhao', 'carreta'] as const;
+export const situacaoChecklist = ['bom', 'ruim']
 
-export type TiposStatus = typeof tiposStatus[number]
-export type TiposVeiculos = typeof tiposVeiculos[number]
+export type TypesStatus = typeof typesStatus[number]
+export type TypesVehicles = typeof typesVehicles[number]
+export type SituacaoChecklist = typeof situacaoChecklist[number]
