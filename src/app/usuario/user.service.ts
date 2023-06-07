@@ -12,6 +12,7 @@ import { RegistroNaoEncontradoException } from 'src/exceptions/registro-inexiste
 import { FindManyOptions, In, Like, Not, Repository } from 'typeorm';
 import { tratarFindOptions } from '../../utils/helpers';
 import { User } from './entities/user.entity';
+// import * as users from '../../config/seed/data/users.json'
 import { CreateUserDto, UpdatePasswordDto, UpdateUserDto } from './user.dto';
 
 @Injectable()
@@ -104,7 +105,7 @@ export class UserService {
                 id: true,
                 name: true,
                 email: true,
-                adress: {bairro: true, logradouro: true, numero: true},
+                adress: {neighborhoods: true, street: true, number: true},
                 role: {
                     id: true,
                     name: true,
@@ -146,5 +147,13 @@ export class UserService {
         const password = await bcrypt.hash(props.body.password, salt);
         await model.update({ id: props.id }, { password });
         return true;
+    }
+
+    async seed(){
+        const res = await fetch("../../config/seed/data/users.json");
+        const users = await res.json()
+        await Promise.all(users.map((u) => {
+            console.log(u);
+        }))
     }
 }

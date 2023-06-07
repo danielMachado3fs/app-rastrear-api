@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Admin",
+    "permissions": []
+  },
+  {
+    "name": "Administrativo",
+    "permissions": []
+  },
+  {
+    "name": "Financeiro",
+    "permissions": []
+  },
+  {
+    "name": "Motorista",
+    "permissions": []
+  },
+  {
+    "name": "Gerente",
+    "permissions": []
+  }
+]

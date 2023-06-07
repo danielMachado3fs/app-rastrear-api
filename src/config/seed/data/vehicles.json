@@ -1,0 +1,107 @@
+[
+  {
+    "model": "Gol",
+    "yearManufacture": "2019-01-01T00:00:00.000Z",
+    "plate": "ABC-1234",
+    "dateAcquisition": "2020-06-15T00:00:00.000Z",
+    "type": "passeio"
+  },
+  {
+    "model": "Onix",
+    "yearManufacture": "2020-04-01T00:00:00.000Z",
+    "plate": "DEF-5678",
+    "dateAcquisition": "2020-10-20T00:00:00.000Z",
+    "type": "passeio"
+  },
+  {
+    "model": "Corolla",
+    "yearManufacture": "2021-09-01T00:00:00.000Z",
+    "plate": "GHI-9012",
+    "dateAcquisition": "2021-12-10T00:00:00.000Z",
+    "type": "passeio"
+  },
+  {
+    "model": "Hilux",
+    "yearManufacture": "2018-06-01T00:00:00.000Z",
+    "plate": "JKL-3456",
+    "dateAcquisition": "2019-03-05T00:00:00.000Z",
+    "type": "caminhao"
+  },
+  {
+    "model": "S10",
+    "yearManufacture": "2022-03-01T00:00:00.000Z",
+    "plate": "MNO-7890",
+    "dateAcquisition": "2022-06-30T00:00:00.000Z",
+    "type": "caminhao"
+  },
+  {
+    "model": "HR",
+    "yearManufacture": "2017-08-01T00:00:00.000Z",
+    "plate": "PQR-1234",
+    "dateAcquisition": "2018-02-12T00:00:00.000Z",
+    "type": "caminhao"
+  },
+  {
+    "model": "Volvo FH",
+    "yearManufacture": "2020-01-01T00:00:00.000Z",
+    "plate": "STU-5678",
+    "dateAcquisition": "2020-08-22T00:00:00.000Z",
+    "type": "carreta"
+  },
+  {
+    "model": "Scania R440",
+    "yearManufacture": "2022-05-01T00:00:00.000Z",
+    "plate": "VWX-9012",
+    "dateAcquisition": "2022-09-05T00:00:00.000Z",
+    "type": "carreta"
+  },
+  {
+    "model": "Mercedes-Benz Actros",
+    "yearManufacture": "2019-10-01T00:00:00.000Z",
+    "plate": "YZA-3456",
+    "dateAcquisition": "2020-04-15T00:00:00.000Z",
+    "type": "carreta"
+  },
+  {
+    "model": "Fiesta",
+    "yearManufacture": "2015-02-01T00:00:00.000Z",
+    "plate": "BCD-7890",
+    "dateAcquisition": "2016-07-08T00:00:00.000Z",
+    "type": "passeio"
+  },
+  {
+    "model": "Civic",
+    "yearManufacture": "2023-01-01T00:00:00.000Z",
+    "plate": "EFG-1234",
+    "dateAcquisition": "2023-05-01T00:00:00.000Z",
+    "type": "passeio"
+  },
+  {
+    "model": "Amarok",
+    "yearManufacture": "2021-12-01T00:00:00.000Z",
+    "plate": "HIJ-5678",
+    "dateAcquisition": "2022-03-10T00:00:00.000Z",
+    "type": "caminhao"
+  },
+  {
+    "model": "Ducato",
+    "yearManufacture": "2019-04-01T00:00:00.000Z",
+    "plate": "KLM-9012",
+    "dateAcquisition": "2019-07-18T00:00:00.000Z",
+    "type": "caminhao"
+  },
+  {
+    "model": "Bitrem",
+    "yearManufacture": "2022-07-01T00:00:00.000Z",
+    "plate": "NOP-3456",
+    "dateAcquisition": "2022-10-25T00:00:00.000Z",
+    "type": "carreta"
+  },
+  {
+    "model": "Uno",
+    "yearManufacture": "2017-05-01T00:00:00.000Z",
+    "plate": "QRS-7890",
+    "dateAcquisition": "2017-09-06T00:00:00.000Z",
+    "type": "passeio"
+  }
+]

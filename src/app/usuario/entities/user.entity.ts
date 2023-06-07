@@ -17,7 +17,7 @@ export interface IUser {
   role: IRole;
 }
 
-@Entity('usuarios')
+@Entity('users')
 export class User extends TimestampEntity implements IUser {
   @PrimaryGeneratedColumn()
   id: number;

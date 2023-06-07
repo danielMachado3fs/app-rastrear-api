@@ -7,19 +7,21 @@ import { RoleModule } from './app/grupo/role.module';
 import { UserModule } from './app/usuario/user.module';
 import { VehicleModule } from './app/veiculo/vehicle.module';
 import { DatabaseModule } from './config/database.module';
+import { SeedModule } from './config/seed/seed.module';
 import { TransactionModule } from './utils/transactions/transaction.module';
 
 @Module({
-  imports: [
-    DatabaseModule,
-    UserModule,
-    RoleModule,
-    VehicleModule,
-    ChecklistModule,
-    TransactionModule
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-  exports: [DatabaseModule, UserModule, RoleModule, TransactionModule]
+    imports: [
+        SeedModule,
+        DatabaseModule,
+        UserModule,
+        RoleModule,
+        VehicleModule,
+        ChecklistModule,
+        TransactionModule,
+    ],
+    controllers: [AppController],
+    providers: [AppService],
+    exports: [DatabaseModule, UserModule, RoleModule, TransactionModule],
 })
 export class AppModule {}

@@ -1,0 +1,245 @@
+[
+  {
+    "name": "João Silva",
+    "email": "joao.silva@example.com",
+    "password": "senha123",
+    "address": {
+      "street": "Rua A",
+      "cep": "12345-678",
+      "state": "São Paulo",
+      "city": "São Paulo",
+      "neighborhoods": "Centro",
+      "number": "123",
+      "complement": "Apartmento 456"
+    },
+    "role": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Maria Santos",
+    "email": "maria.santos@example.com",
+    "password": "senha456",
+    "address": {
+      "street": "Avenida B",
+      "cep": "87654-321",
+      "state": "Rio de Janeiro",
+      "city": "Rio de Janeiro",
+      "neighborhoods": "Copacabana",
+      "number": "456"
+    },
+    "role": {
+      "id": 2
+    }
+  },
+  {
+    "name": "José Pereira",
+    "email": "jose.pereira@example.com",
+    "password": "senha789",
+    "address": {
+      "street": "Rua C",
+      "cep": "54321-987",
+      "state": "Minas Gerais",
+      "city": "Belo Horizonte",
+      "neighborhoods": "Savassi",
+      "number": "789"
+    },
+    "role": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Ana Ferreira",
+    "email": "ana.ferreira@example.com",
+    "password": "senhaabc",
+    "address": {
+      "street": "Rua D",
+      "cep": "13579-246",
+      "state": "Rio Grande do Sul",
+      "city": "Porto Alegre",
+      "neighborhoods": "Moinhos de Vento",
+      "number": "246"
+    },
+    "role": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Pedro Gomes",
+    "email": "pedro.gomes@example.com",
+    "password": "senhaxyz",
+    "address": {
+      "street": "Avenida E",
+      "cep": "97531-864",
+      "state": "Rio Grande do Sul",
+      "city": "Pelotas",
+      "neighborhoods": "Centro",
+      "number": "864"
+    },
+    "role": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Carla Oliveira",
+    "email": "carla.oliveira@example.com",
+    "password": "senhamno",
+    "address": {
+      "street": "Rua F",
+      "cep": "13579-864",
+      "state": "São Paulo",
+      "city": "Ribeirão Preto",
+      "neighborhoods": "Jardim Paulista",
+      "number": "987"
+    },
+    "role": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Lucas Santos",
+    "email": "lucas.santos@example.com",
+    "password": "senha123",
+    "address": {
+      "street": "Rua G",
+      "cep": "54321-678",
+      "state": "Bahia",
+      "city": "Salvador",
+      "neighborhoods": "Pituba",
+      "number": "654"
+    },
+    "role": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Juliana Lima",
+    "email": "juliana.lima@example.com",
+    "password": "senha456",
+    "address": {
+      "street": "Avenida H",
+      "cep": "87654-321",
+      "state": "Goiás",
+      "city": "Goiânia",
+      "neighborhoods": "Setor Bueno",
+      "number": "987"
+    },
+    "role": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Fernando Souza",
+    "email": "fernando.souza@example.com",
+    "password": "senha789",
+    "address": {
+      "street": "Rua I",
+      "cep": "54321-987",
+      "state": "Santa Catarina",
+      "city": "Florianópolis",
+      "neighborhoods": "Centro",
+      "number": "321",
+      "complement": "Sala 123"
+    },
+    "role": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Patricia Oliveira",
+    "email": "patricia.oliveira@example.com",
+    "password": "senhaabc",
+    "address": {
+      "street": "Rua J",
+      "cep": "13579-246",
+      "state": "Paraná",
+      "city": "Curitiba",
+      "neighborhoods": "Batel",
+      "number": "654"
+    },
+    "role": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Rafael Silva",
+    "email": "rafael.silva@example.com",
+    "password": "senhaxyz",
+    "address": {
+      "street": "Avenida K",
+      "cep": "97531-864",
+      "state": "Pará",
+      "city": "Belém",
+      "neighborhoods": "Nazaré",
+      "number": "987"
+    },
+    "role": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Mariana Costa",
+    "email": "mariana.costa@example.com",
+    "password": "senhamno",
+    "address": {
+      "street": "Rua L",
+      "cep": "13579-864",
+      "state": "Amazonas",
+      "city": "Manaus",
+      "neighborhoods": "Centro",
+      "number": "246"
+    },
+    "role": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Guilherme Santos",
+    "email": "guilherme.santos@example.com",
+    "password": "senha123",
+    "address": {
+      "street": "Rua M",
+      "cep": "54321-678",
+      "state": "Ceará",
+      "city": "Fortaleza",
+      "neighborhoods": "Aldeota",
+      "number": "123"
+    },
+    "role": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Larissa Lima",
+    "email": "larissa.lima@example.com",
+    "password": "senha456",
+    "address": {
+      "street": "Avenida N",
+      "cep": "87654-321",
+      "state": "Pernambuco",
+      "city": "Recife",
+      "neighborhoods": "Boa Viagem",
+      "number": "456"
+    },
+    "role": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Rodrigo Oliveira",
+    "email": "rodrigo.oliveira@example.com",
+    "password": "senha789",
+    "address": {
+      "street": "Rua O",
+      "cep": "54321-987",
+      "state": "Mato Grosso",
+      "city": "Cuiabá",
+      "neighborhoods": "Centro",
+      "number": "789",
+      "complement": "Sala 456"
+    },
+    "role": {
+      "id": 1
+    }
+  }
+]
