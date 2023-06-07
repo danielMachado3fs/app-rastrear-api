@@ -1,7 +1,5 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import 'dotenv/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ChecklistModule } from './app/checklist/checklist.module';
 import { RoleModule } from './app/grupo/role.module';
 import { UserModule } from './app/usuario/user.module';
@@ -20,8 +18,7 @@ import { TransactionModule } from './utils/transactions/transaction.module';
         ChecklistModule,
         TransactionModule,
     ],
-    controllers: [AppController],
-    providers: [AppService],
-    exports: [DatabaseModule, UserModule, RoleModule, TransactionModule],
+    providers: [Logger],
+    exports: [DatabaseModule, UserModule, RoleModule, TransactionModule, VehicleModule],
 })
 export class AppModule {}

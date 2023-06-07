@@ -1,9 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
 import {
-    CommonPropsCreate,
-    CommonPropsDelete,
-    CommonPropsFind,
-    CommonPropsUpdate,
+  CommonPropsCreate,
+  CommonPropsDelete,
+  CommonPropsFind,
+  CommonPropsUpdate,
 } from 'src/common/common';
 import { GRUPO_REPOSITORY } from 'src/config/constants';
 import { RegistroNaoEncontradoException } from 'src/exceptions/registro-inexistente.exception';
@@ -68,5 +68,12 @@ export class RoleService {
             return true;
         }
         return false;
+    }
+
+    async seed(){
+    const users = require("src/config/seed/data/roles.json");
+    await Promise.all(users.map(async (v) => {
+        await this.model.save(v);
+    }))
     }
 }

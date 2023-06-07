@@ -7,9 +7,9 @@ import { VehicleService } from 'src/app/veiculo/vehicle.service';
 export class SeedService {
   private logger = new Logger(SeedService.name);
   constructor(
+    @Inject(RoleService) private roleService: RoleService,
     @Inject(UserService) private userService: UserService,
-    @Inject(VehicleService) private vehicleService: VehicleService,
-    @Inject(RoleService) private roleService: RoleService
+    @Inject(VehicleService) private vehicleService: VehicleService
   ){}
 
   async seed(){

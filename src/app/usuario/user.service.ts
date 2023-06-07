@@ -150,10 +150,9 @@ export class UserService {
     }
 
     async seed(){
-        const res = await fetch("../../config/seed/data/users.json");
-        const users = await res.json()
-        await Promise.all(users.map((u) => {
-            console.log(u);
+        const users = require("src/config/seed/data/users.json");
+        await Promise.all(users.map(async (u) => {
+            await this.model.save(u);
         }))
     }
 }

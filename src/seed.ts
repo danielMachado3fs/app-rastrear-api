@@ -14,6 +14,7 @@ async function bootstrap() {
                     logger.debug('Finalizando seeder');
                 })
                 .catch((err) => {
+                    logger.debug(err);
                     logger.debug('Erro no seeder');
                     throw err;
                 })

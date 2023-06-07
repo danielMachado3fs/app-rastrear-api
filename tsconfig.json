@@ -1,12 +1,21 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "require": ["tsconfig-paths/register"]
+  },
   "compilerOptions": {
+    "lib": [
+      "es2022",
+      "es6",
+      "DOM"
+    ],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es6",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -16,6 +25,16 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+    "typeRoots": [
+      "node_modules/@types",
+      "./*.d.ts"
+    ],
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+      "uploads"
+  ]
 }
