@@ -9,6 +9,6 @@ import { UserService } from './user.service';
   imports: [DatabaseModule, forwardRef(() => RoleModule)],
   controllers: [UserController],
   providers: [UserService, ...usuarioProviders],
-  exports: [UserService],
+  exports: [UserService, ...usuarioProviders],
 })
 export class UserModule {}
