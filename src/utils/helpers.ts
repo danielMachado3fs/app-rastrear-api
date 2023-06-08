@@ -1,5 +1,5 @@
-import { CommonPropsFind } from "src/common/common";
 import { FindManyOptions, In } from "typeorm";
+import { CommonPropsFind } from "../common/common";
 
 export const tratarFindOptions = <T>({ id, query = {} }: CommonPropsFind<T>) => {
   let options: FindManyOptions<T> = {};

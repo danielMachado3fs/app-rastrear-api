@@ -1,5 +1,5 @@
-import { TimestampEntity } from "src/common/timestamp-entity";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { TimestampEntity } from "../../../common/timestamp-entity";
 
 export interface IRole{
   id?: number;

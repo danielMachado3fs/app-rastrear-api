@@ -1,24 +1,27 @@
 import { Inject, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
+import { FindManyOptions, In, Like, Not, Repository } from 'typeorm';
 import {
     CommonPropsCreate,
     CommonPropsDelete,
     CommonPropsFind,
     CommonPropsUpdate,
-} from 'src/common/common';
-import { USUARIO_REPOSITORY } from 'src/config/constants';
-import { RegistroExistenteException } from 'src/exceptions/registro-existente.exception';
-import { RegistroNaoEncontradoException } from 'src/exceptions/registro-inexistente.exception';
-import { FindManyOptions, In, Like, Not, Repository } from 'typeorm';
+} from '../../common/common';
+import { RegistroExistenteException } from '../../exceptions/registro-existente.exception';
+import { RegistroNaoEncontradoException } from '../../exceptions/registro-inexistente.exception';
 import { tratarFindOptions } from '../../utils/helpers';
 import { User } from './entities/user.entity';
 // import * as users from '../../config/seed/data/users.json'
+import { USER_REPOSITORY } from '../../config/constants';
+import { RoleService } from '../grupo/role.service';
 import { CreateUserDto, UpdatePasswordDto, UpdateUserDto } from './user.dto';
 
 @Injectable()
 export class UserService {
     constructor(
-        @Inject(USUARIO_REPOSITORY) private model: Repository<User>,
+        @Inject(USER_REPOSITORY) private model: Repository<User>,
+        // @InjectRepository(User) private model: Repository<User>,
+        @Inject(RoleService) private roleService: RoleService,
     ) {}
 
     async create({ body, transaction }: CommonPropsCreate<CreateUserDto>) {
@@ -105,7 +108,7 @@ export class UserService {
                 id: true,
                 name: true,
                 email: true,
-                adress: {neighborhoods: true, street: true, number: true},
+                address: {neighborhoods: true, street: true, number: true},
                 role: {
                     id: true,
                     name: true,
@@ -150,8 +153,11 @@ export class UserService {
     }
 
     async seed(){
-        const users = require("src/config/seed/data/users.json");
+        const users = require("../../config/seed/data/users.json");
         await Promise.all(users.map(async (u) => {
+            const role = await this.roleService.findOne({id: u.roleId});
+            delete u.roleId;
+            u.role = role;
             await this.model.save(u);
         }))
     }

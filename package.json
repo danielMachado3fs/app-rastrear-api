@@ -23,7 +23,7 @@
     "typeorm:generate-migration": "npm run typeorm migration:generate ./src/migrations/migration -- -d dist/config/database.providers.js",
     "typeorm:create-migration": "npm run typeorm -- -d ./typeOrm.config.ts migration:create ./src/migrations/migration",
     "typeorm:revert-migration": "npm run typeorm -- -d ./typeOrm.config.ts migration:revert",
-    "migrate": "npm run build && npm run typeorm:generate-migration && npm run build && npm run typeorm:run-migrations",
+    "migrate": "rimraf --glob src/migrations/* npm run build && npm run typeorm:generate-migration && npm run build && npm run typeorm:run-migrations",
     "seed": "ts-node src/seed.ts"
   },
   "dependencies": {
@@ -39,6 +39,7 @@
     "class-validator": "^0.14.0",
     "mysql2": "^3.2.0",
     "reflect-metadata": "^0.1.13",
+    "rimraf": "^5.0.1",
     "rxjs": "^7.2.0",
     "typeorm": "^0.3.12"
   },

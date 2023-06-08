@@ -1,40 +1,57 @@
 {
-  "ts-node": {
-    "transpileOnly": true,
-    "require": ["tsconfig-paths/register"]
-  },
-  "compilerOptions": {
-    "lib": [
-      "es2022",
-      "es6",
-      "DOM"
+    "ts-node": {
+        "transpileOnly": true,
+        "require": [
+            "tsconfig-paths/register"
+        ]
+    },
+    "jest": {
+        // ...
+        "rootDir": "./",
+        "moduleNameMapper": {
+            "^src/(.*)$": "<rootDir>/$1"
+        },
+    },
+    "compilerOptions": {
+        "lib": [
+            "es2022",
+            "es6",
+            "DOM"
+        ],
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "./build",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "node_modules/@types",
+            "./*.d.ts"
+        ],
+        "rootDir": "./",
+        "baseUrl": ".",
+        "paths": {
+            "src/*": [
+                "./src/*"
+            ]
+        },
+        //   "paths": {
+        //     "@app": ["./src/app"],
+        //     "src/common": ["./src/common"],
+        //     "@config": ["./src/config"],
+        //     "@decorators": ["./src/decorators"],
+        //     "@exceptions": ["./src/exceptions"],
+        //     "@migrations": ["./src/migrations"],
+        //   },
+        "jsx": "react-jsx",
+    },
+    "include": [
+        "src/**/*"
     ],
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es6",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "typeRoots": [
-      "node_modules/@types",
-      "./*.d.ts"
-    ],
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-      "uploads"
-  ]
+    "exclude": [
+        "uploads"
+    ]
 }

@@ -1,7 +1,7 @@
-import { Vehicle } from "src/app/veiculo/entities/vehicle.entity";
-import { TimestampEntity } from "src/common/timestamp-entity";
-import { SituacaoChecklist } from "src/common/types";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { TimestampEntity } from "../../../common/timestamp-entity";
+import { SituacaoChecklist } from "../../../common/types";
+import { Vehicle } from "../../veiculo/entities/vehicle.entity";
 
 export interface IOpcao {
   situacao: SituacaoChecklist;

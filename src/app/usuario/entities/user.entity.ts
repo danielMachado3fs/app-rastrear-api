@@ -1,19 +1,19 @@
-import { IRole, Role } from 'src/app/grupo/entities/role.entity';
-import { Adress, IAdress } from 'src/common/endereco';
-import { TimestampEntity } from 'src/common/timestamp-entity';
 import {
   Column,
   Entity,
   ManyToOne,
   PrimaryGeneratedColumn
 } from 'typeorm';
+import { Adress, IAdress } from '../../../common/endereco';
+import { TimestampEntity } from '../../../common/timestamp-entity';
+import { IRole, Role } from '../../grupo/entities/role.entity';
 
 export interface IUser {
   id?: number;
   name: string;
   email: string;
   password: string;
-  adress: IAdress;
+  address: IAdress;
   role: IRole;
 }
 
@@ -32,7 +32,7 @@ export class User extends TimestampEntity implements IUser {
   password: string;
 
   @Column(() => Adress, {prefix: false})
-  adress: Adress;
+  address: Adress;
 
   @ManyToOne(() => Role,  (role) => role.id)
   role: Role;

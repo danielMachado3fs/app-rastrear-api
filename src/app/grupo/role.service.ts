@@ -1,20 +1,20 @@
 import { Inject, Injectable } from '@nestjs/common';
-import {
-  CommonPropsCreate,
-  CommonPropsDelete,
-  CommonPropsFind,
-  CommonPropsUpdate,
-} from 'src/common/common';
-import { GRUPO_REPOSITORY } from 'src/config/constants';
-import { RegistroNaoEncontradoException } from 'src/exceptions/registro-inexistente.exception';
 import { FindManyOptions, Repository } from 'typeorm';
+import {
+    CommonPropsCreate,
+    CommonPropsDelete,
+    CommonPropsFind,
+    CommonPropsUpdate,
+} from '../../common/common';
+import { ROLE_REPOSITORY } from '../../config/constants';
+import { RegistroNaoEncontradoException } from '../../exceptions/registro-inexistente.exception';
 import { tratarFindOptions } from '../../utils/helpers';
 import { Role } from './entities/role.entity';
 import { CreateRoleDto, UpdateRoleDto } from './role.dto';
 
 @Injectable()
 export class RoleService {
-    constructor(@Inject(GRUPO_REPOSITORY) private model: Repository<Role>) {}
+    constructor(@Inject(ROLE_REPOSITORY) private model: Repository<Role>) {}
 
     async create({ body, transaction }: CommonPropsCreate<CreateRoleDto>) {
         const model = transaction.manager.getRepository(Role);
@@ -71,7 +71,7 @@ export class RoleService {
     }
 
     async seed(){
-    const users = require("src/config/seed/data/roles.json");
+    const users = require("../../config/seed/data/roles.json");
     await Promise.all(users.map(async (v) => {
         await this.model.save(v);
     }))

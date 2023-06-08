@@ -1,10 +1,10 @@
-import { UserModule } from 'src/app/usuario/user.module';
+import { UserModule } from '../../app/usuario/user.module';
 import { DatabaseModule } from '../database.module';
 import { SeedService } from './seed.service';
 
 import { Module, forwardRef } from '@nestjs/common';
-import { RoleModule } from 'src/app/grupo/role.module';
-import { VehicleModule } from 'src/app/veiculo/vehicle.module';
+import { RoleModule } from '../../app/grupo/role.module';
+import { VehicleModule } from '../../app/veiculo/vehicle.module';
 
 @Module({
     imports: [

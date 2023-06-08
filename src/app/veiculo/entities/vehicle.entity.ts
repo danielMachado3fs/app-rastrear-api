@@ -1,5 +1,3 @@
-import { Checklist } from 'src/app/checklist/entities/checklist.entity';
-import { TypesVehicles, typesVehicles } from 'src/common/types';
 import {
   Column,
   CreateDateColumn,
@@ -9,6 +7,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm';
+import { TypesVehicles, typesVehicles } from '../../../common/types';
+import { Checklist } from '../../checklist/entities/checklist.entity';
 
 export interface IVehicle {
   id?: number;

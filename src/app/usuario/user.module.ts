@@ -1,5 +1,5 @@
 import { Module, forwardRef } from '@nestjs/common';
-import { DatabaseModule } from 'src/config/database.module';
+import { DatabaseModule } from '../../config/database.module';
 import { RoleModule } from '../grupo/role.module';
 import { usuarioProviders } from './entities/user.providers';
 import { UserController } from './user.controller';

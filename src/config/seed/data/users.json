@@ -12,9 +12,8 @@
       "number": "123",
       "complement": "Apartmento 456"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   },
   {
     "name": "Maria Santos",
@@ -28,9 +27,8 @@
       "neighborhoods": "Copacabana",
       "number": "456"
     },
-    "role": {
-      "id": 2
-    }
+    "roleId": 2,
+    "role": null
   },
   {
     "name": "José Pereira",
@@ -44,9 +42,8 @@
       "neighborhoods": "Savassi",
       "number": "789"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   },
   {
     "name": "Ana Ferreira",
@@ -60,9 +57,8 @@
       "neighborhoods": "Moinhos de Vento",
       "number": "246"
     },
-    "role": {
-      "id": 2
-    }
+    "roleId": 2,
+    "role": null
   },
   {
     "name": "Pedro Gomes",
@@ -76,9 +72,8 @@
       "neighborhoods": "Centro",
       "number": "864"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   },
   {
     "name": "Carla Oliveira",
@@ -92,9 +87,8 @@
       "neighborhoods": "Jardim Paulista",
       "number": "987"
     },
-    "role": {
-      "id": 2
-    }
+    "roleId": 2,
+    "role": null
   },
   {
     "name": "Lucas Santos",
@@ -108,9 +102,8 @@
       "neighborhoods": "Pituba",
       "number": "654"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   },
   {
     "name": "Juliana Lima",
@@ -124,9 +117,8 @@
       "neighborhoods": "Setor Bueno",
       "number": "987"
     },
-    "role": {
-      "id": 2
-    }
+    "roleId": 2,
+    "role": null
   },
   {
     "name": "Fernando Souza",
@@ -141,9 +133,8 @@
       "number": "321",
       "complement": "Sala 123"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   },
   {
     "name": "Patricia Oliveira",
@@ -157,9 +148,8 @@
       "neighborhoods": "Batel",
       "number": "654"
     },
-    "role": {
-      "id": 2
-    }
+    "roleId": 2,
+    "role": null
   },
   {
     "name": "Rafael Silva",
@@ -173,9 +163,8 @@
       "neighborhoods": "Nazaré",
       "number": "987"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   },
   {
     "name": "Mariana Costa",
@@ -189,9 +178,8 @@
       "neighborhoods": "Centro",
       "number": "246"
     },
-    "role": {
-      "id": 2
-    }
+    "roleId": 2,
+    "role": null
   },
   {
     "name": "Guilherme Santos",
@@ -205,9 +193,8 @@
       "neighborhoods": "Aldeota",
       "number": "123"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   },
   {
     "name": "Larissa Lima",
@@ -221,9 +208,8 @@
       "neighborhoods": "Boa Viagem",
       "number": "456"
     },
-    "role": {
-      "id": 2
-    }
+    "roleId": 2,
+    "role": null
   },
   {
     "name": "Rodrigo Oliveira",
@@ -238,8 +224,7 @@
       "number": "789",
       "complement": "Sala 456"
     },
-    "role": {
-      "id": 1
-    }
+    "roleId": 1,
+    "role": null
   }
 ]

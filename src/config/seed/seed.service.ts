@@ -1,7 +1,7 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
-import { RoleService } from 'src/app/grupo/role.service';
-import { UserService } from 'src/app/usuario/user.service';
-import { VehicleService } from 'src/app/veiculo/vehicle.service';
+import { RoleService } from '../../app/grupo/role.service';
+import { UserService } from '../../app/usuario/user.service';
+import { VehicleService } from '../../app/veiculo/vehicle.service';
 
 @Injectable()
 export class SeedService {

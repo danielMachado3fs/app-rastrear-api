@@ -1,8 +1,8 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { Type } from 'class-transformer';
 import { IsEmail, IsNotEmpty, IsNotEmptyObject, IsObject, IsString, MinLength, ValidateNested } from 'class-validator';
-import { AdressDto } from 'src/common/endereco';
-import { Match } from 'src/decorators/match.decorator';
+import { AdressDto } from '../../common/endereco';
+import { Match } from '../../decorators/match.decorator';
 import { Role } from '../grupo/entities/role.entity';
 
 export class CreateUserDto {

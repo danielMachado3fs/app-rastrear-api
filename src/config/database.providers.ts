@@ -1,13 +1,13 @@
-import { Checklist } from 'src/app/checklist/entities/checklist.entity';
-import { Role } from 'src/app/grupo/entities/role.entity';
-import { User } from 'src/app/usuario/entities/user.entity';
-import { Vehicle } from 'src/app/veiculo/entities/vehicle.entity';
 import { DataSource } from 'typeorm';
+import { Checklist } from '../app/checklist/entities/checklist.entity';
+import { Role } from '../app/grupo/entities/role.entity';
+import { User } from '../app/usuario/entities/user.entity';
+import { Vehicle } from '../app/veiculo/entities/vehicle.entity';
 import { DATA_SOURCE } from './constants';
 
 let config: any;
 if (process.env.NODE_ENV != 'test') {
-  console.log([__dirname + '/src/migrations/**/*{.ts,.js}']);
+  console.log([__dirname + '/dist/migrations/*.js']);
   config = {
     database: 'app_scf',
     type: 'mariadb',
@@ -17,8 +17,8 @@ if (process.env.NODE_ENV != 'test') {
     port: 3306,
     entities: [User, Role, Vehicle, Checklist],
     // entities: [__dirname + '/../../**/*.entity{.ts,.js}'],
-    // migrations: ['../../migrations/**/*.js'],
-    synchronize: true,
+    migrations: ['/../migrations/*.js'],
+    synchronize: false,
     migrationsRun: false,
     // database: process.env.DATABASE_NAME,
     // type: process.env.DATABASE_TYPE,

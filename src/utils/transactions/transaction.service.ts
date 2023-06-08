@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { connectionSource } from 'src/config/database.providers';
 import { QueryRunner } from 'typeorm';
+import { connectionSource } from '../../config/database.providers';
 
 export interface QueryRunnerFile {
   origem: string,

@@ -2,7 +2,7 @@ import {
   Body,
   Controller, Delete, Get, Inject, Param, ParseIntPipe, Patch, Post, forwardRef
 } from '@nestjs/common';
-import { TransactionService } from 'src/utils/transactions/transaction.service';
+import { TransactionService } from '../../utils/transactions/transaction.service';
 import { CreateUserDto, UpdateUserDto } from './user.dto';
 import { UserService } from './user.service';
 
