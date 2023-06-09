@@ -10,10 +10,11 @@ export class VehicleService {
   ){}
 
   async seed(){
-    const users = require("../../config/seed/data/vehicles.json");
-    await Promise.all(users.map(async (v) => {
+    const vehiclesJson = require("../../config/seed/data/vehicles.json");
+    const vehicles = await Promise.all(vehiclesJson.map(async (v) => {
         await this.model.save(v);
     }))
+    return vehicles;
   }
 }
 

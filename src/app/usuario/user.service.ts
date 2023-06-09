@@ -154,11 +154,15 @@ export class UserService {
 
     async seed(){
         const users = require("../../config/seed/data/users.json");
+        const save = [];
         await Promise.all(users.map(async (u) => {
             const role = await this.roleService.findOne({id: u.roleId});
             delete u.roleId;
             u.role = role;
-            await this.model.save(u);
+            const salt = await bcrypt.genSalt();
+            u.password = await bcrypt.hash(u.password, salt);
+            save.push(await this.model.save(u));
         }))
+        return save;
     }
 }

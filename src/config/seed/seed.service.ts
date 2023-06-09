@@ -13,6 +13,24 @@ export class SeedService {
   ){}
 
   async seed(){
-    await this.userService.seed();
+    this.logger.debug('Iniciando seeder');
+    await this.seedRoles();
+    await this.seedUsers();
+    await this.seedVehicles();
+  }
+
+  async seedRoles(){
+    const roles = await this.roleService.seed();
+    this.logger.debug(`Criados ${roles.length} roles`);
+  }
+
+  async seedUsers(){
+    const users = await this.userService.seed();
+    this.logger.debug(`Criados ${users.length} usuarios`);
+  }
+
+  async seedVehicles(){
+    const vehicles = await this.vehicleService.seed();
+    this.logger.debug(`Criados ${vehicles.length} veiculos`);
   }
 }

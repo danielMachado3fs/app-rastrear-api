@@ -71,9 +71,10 @@ export class RoleService {
     }
 
     async seed(){
-    const users = require("../../config/seed/data/roles.json");
-    await Promise.all(users.map(async (v) => {
+    const rolesJson = require("../../config/seed/data/roles.json");
+    const roles = await Promise.all(rolesJson.map(async (v) => {
         await this.model.save(v);
     }))
+    return roles;
     }
 }
