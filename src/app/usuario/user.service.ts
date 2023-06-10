@@ -20,7 +20,6 @@ import { CreateUserDto, UpdatePasswordDto, UpdateUserDto } from './user.dto';
 export class UserService {
     constructor(
         @Inject(USER_REPOSITORY) private model: Repository<User>,
-        // @InjectRepository(User) private model: Repository<User>,
         @Inject(RoleService) private roleService: RoleService,
     ) {}
 

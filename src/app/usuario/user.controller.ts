@@ -17,8 +17,11 @@ export class UserController {
   async create(@Body() body: CreateUserDto) {
     const transaction = await this.transaction.startTransaction();
     try{
-      return this.userService.create({body, transaction});
+      const data = this.userService.create({body, transaction});
+      await this.transaction.commitTransaction(transaction);
+      return data;
     }catch(err){
+      await this.transaction.rollbackTransaction(transaction);
       throw new Error(err);
     }
   }

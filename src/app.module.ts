@@ -1,5 +1,7 @@
 import { Logger, Module } from '@nestjs/common';
 import 'dotenv/config';
+import { AuthModule } from './app/auth/auth.module';
+import { AuthService } from './app/auth/auth.service';
 import { ChecklistModule } from './app/checklist/checklist.module';
 import { RoleModule } from './app/grupo/role.module';
 import { UserModule } from './app/usuario/user.module';
@@ -10,6 +12,7 @@ import { TransactionModule } from './utils/transactions/transaction.module';
 
 @Module({
     imports: [
+        AuthModule,
         SeedModule,
         DatabaseModule,
         UserModule,
@@ -18,7 +21,13 @@ import { TransactionModule } from './utils/transactions/transaction.module';
         ChecklistModule,
         TransactionModule,
     ],
-    providers: [Logger],
-    exports: [DatabaseModule, UserModule, RoleModule, TransactionModule, VehicleModule],
+    providers: [AuthService, Logger],
+    exports: [
+        DatabaseModule,
+        UserModule,
+        RoleModule,
+        TransactionModule,
+        VehicleModule,
+    ],
 })
 export class AppModule {}

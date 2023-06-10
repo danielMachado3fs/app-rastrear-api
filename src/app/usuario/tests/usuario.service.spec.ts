@@ -15,7 +15,7 @@ describe('UserService', () => {
   const mockRoleService = {
     find: jest.fn(),
     findOne: jest.fn(),
-    save: jest.fn(),
+    create: jest.fn(),
     update: jest.fn(),
     delete: jest.fn(),
   }

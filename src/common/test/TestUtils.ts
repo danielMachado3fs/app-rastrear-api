@@ -28,4 +28,11 @@ export default class TestUtils {
     vehicle.type = "passeio";
     return vehicle;
   }
+
+  static giveAMeAValidLogin(){
+    return {
+      email: "joao.silva@example.com",
+      senha: "senha123"
+    }
+  }
 }
