@@ -14,7 +14,7 @@ import { User } from './entities/user.entity';
 // import * as users from '../../config/seed/data/users.json'
 import { USER_REPOSITORY } from '../../config/constants';
 import { RoleService } from '../grupo/role.service';
-import { CreateUserDto, UpdatePasswordDto, UpdateUserDto } from './user.dto';
+import { CreateUserDto, UpdateUserDto } from './user.dto';
 
 @Injectable()
 export class UserService {
@@ -73,7 +73,7 @@ export class UserService {
         return model.save({ ...user, ...body });
     }
 
-    async findOne(props: CommonPropsFind<User> & { id: number }) {
+    async findOne(props: CommonPropsFind<User> & { id?: number }) {
         let model = this.model;
         if (props?.transaction)
             model = props.transaction.manager.getRepository(User);
@@ -133,22 +133,6 @@ export class UserService {
             return true;
         }
         return false;
-    }
-
-    async updatePassword(
-        props: CommonPropsUpdate<UpdatePasswordDto>,
-    ): Promise<boolean> {
-        const model = props.transaction.manager.getRepository(User);
-        const user = await model.findOne({ where: { id: props.id } });
-        if (!user)
-            throw new RegistroNaoEncontradoException({
-                coluna: 'id',
-                valor: props.id,
-            });
-        const salt = await bcrypt.genSalt();
-        const password = await bcrypt.hash(props.body.password, salt);
-        await model.update({ id: props.id }, { password });
-        return true;
     }
 
     async seed(){

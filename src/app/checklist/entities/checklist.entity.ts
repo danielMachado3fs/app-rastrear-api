@@ -1,32 +1,33 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TimestampEntity } from "../../../common/timestamp-entity";
-import { SituacaoChecklist } from "../../../common/types";
+import { SituacaoChecklist, TypeChecklist, TypesVehicles, typesChecklist, typesVehicles } from "../../../common/types";
 import { Vehicle } from "../../veiculo/entities/vehicle.entity";
 
 export interface IOpcao {
+  title: string;
   situacao: SituacaoChecklist;
   descricao?: string;
 }
 
 export interface IChecklistOptions{
-  situacao: "entrada" | "saida";
-  pneus: IOpcao;
-  lampadasExternas: IOpcao;
-  nivelOleo: IOpcao;
-  carroceria: IOpcao;
-  limpadorParabrisa: IOpcao;
-  vidros: IOpcao;
+  title: string;
+}
+
+export interface IChecklistVehicle {
+  id?: number;
+  vehicle: Vehicle;
+  kmAtual: number;
+  options: IOpcao[];
 }
 
 export interface IChecklist {
-  id: number;
-  vehicle: Vehicle;
-  kmAtual: number;
-  options: IChecklistOptions;
+  id?: number;
+  typeVehicle: TypesVehicles;
+  options: IChecklistOptions[];
 }
 
-@Entity('checklist')
-export class Checklist extends TimestampEntity implements IChecklist{
+@Entity('checklist-vehicle')
+export class ChecklistVehicle extends TimestampEntity implements IChecklistVehicle{
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -36,10 +37,29 @@ export class Checklist extends TimestampEntity implements IChecklist{
   @Column()
   kmAtual: number;
 
+  @Column({type: 'enum', enum: typesChecklist})
+  type: TypeChecklist;
+
   @Column({
     type: 'json',
     nullable: true,
     default: null
   })
-  options: IChecklistOptions;
+  options: IOpcao[];
+}
+
+@Entity('checklist')
+export class Checklist extends TimestampEntity implements IChecklist{
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({type: 'enum', enum: typesVehicles})
+  typeVehicle: TypesVehicles;
+
+  @Column({
+    type: 'json',
+    nullable: false,
+    default: []
+  })
+  options: IChecklistOptions[];
 }

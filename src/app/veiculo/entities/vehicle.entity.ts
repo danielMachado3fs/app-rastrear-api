@@ -7,8 +7,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm';
-import { TypesVehicles, typesVehicles } from '../../../common/types';
-import { Checklist } from '../../checklist/entities/checklist.entity';
+import { TypesStatus, TypesVehicles, typesStatus, typesVehicles } from '../../../common/types';
+import { Checklist, ChecklistVehicle } from '../../checklist/entities/checklist.entity';
 
 export interface IVehicle {
   id?: number;
@@ -17,6 +17,8 @@ export interface IVehicle {
   plate: string;
   dateAcquisition: Date;
   type: TypesVehicles;
+  status: TypesStatus;
+  image?: string;
 }
 
 @Entity('vehicles')
@@ -39,7 +41,13 @@ export class Vehicle implements IVehicle {
   @Column({type: 'enum', enum: typesVehicles})
   type: TypesVehicles;
 
-  @OneToMany(() => Checklist, (checklist) => checklist.vehicle)
+  @Column({type: 'enum', enum: typesStatus})
+  status: TypesStatus;
+
+  @Column({nullable: true, default: null})
+  imagem: string;
+
+  @OneToMany(() => ChecklistVehicle, (checklist) => checklist.vehicle)
   checklist: Checklist[]
 
   @CreateDateColumn()

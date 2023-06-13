@@ -1,5 +1,6 @@
 import { User } from "../../app/usuario/entities/user.entity";
 import { Vehicle } from "../../app/veiculo/entities/vehicle.entity";
+import { CommonPropsAuth } from "../common";
 
 export default class TestUtils {
   static giveAMeAValidUser(){
@@ -29,10 +30,17 @@ export default class TestUtils {
     return vehicle;
   }
 
-  static giveAMeAValidLogin(){
+  static giveAMeAValidLogin(): CommonPropsAuth{
     return {
       email: "joao.silva@example.com",
-      senha: "senha123"
+      password: "senha123"
+    }
+  }
+
+  static giveAMeAInvalidLogin(): CommonPropsAuth{
+    return {
+      email: "joao.silva@example.com",
+      password: ""
     }
   }
 }

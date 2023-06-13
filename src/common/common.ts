@@ -21,3 +21,8 @@ export interface CommonPropsFind<T> extends Partial<CommonProps>{
   id?: number | number[];
   query?: FindManyOptions<T>;
 }
+
+export interface CommonPropsAuth {
+  email: string;
+  password: string;
+}
