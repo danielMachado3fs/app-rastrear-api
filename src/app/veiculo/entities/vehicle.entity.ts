@@ -8,7 +8,8 @@ import {
   UpdateDateColumn
 } from 'typeorm';
 import { TypesStatus, TypesVehicles, typesStatus, typesVehicles } from '../../../common/types';
-import { Checklist, ChecklistVehicle } from '../../checklist/entities/checklist.entity';
+import { ChecklistVehicle } from '../../checklist/entities/checklist-vehicle.entity';
+import { Checklist } from '../../checklist/entities/checklist.entity';
 
 export interface IVehicle {
   id?: number;
@@ -41,7 +42,7 @@ export class Vehicle implements IVehicle {
   @Column({type: 'enum', enum: typesVehicles})
   type: TypesVehicles;
 
-  @Column({type: 'enum', enum: typesStatus})
+  @Column({type: 'enum', enum: typesStatus, default: "ativo"})
   status: TypesStatus;
 
   @Column({nullable: true, default: null})

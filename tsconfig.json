@@ -6,7 +6,6 @@
         ]
     },
     "jest": {
-        // ...
         "rootDir": "src",
         "moduleNameMapper": {
             "^src/(.*)$": "<rootDir>/$1"

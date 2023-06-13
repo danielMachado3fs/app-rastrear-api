@@ -1,3 +1,4 @@
+import { TypesStatus, typesStatus } from 'src/common/types';
 import {
   Column,
   Entity,
@@ -36,4 +37,7 @@ export class User extends TimestampEntity implements IUser {
 
   @ManyToOne(() => Role,  (role) => role.id)
   role: Role;
+  
+  @Column({type: 'enum', enum: typesStatus, default: "ativo"})
+  status: TypesStatus;
 }

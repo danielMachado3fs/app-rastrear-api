@@ -1,5 +1,6 @@
 [
   {
+    "status": "ativo",
     "name": "João Silva",
     "email": "joao.silva@example.com",
     "password": "senha123",
@@ -16,6 +17,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Maria Santos",
     "email": "maria.santos@example.com",
     "password": "senha456",
@@ -31,6 +33,7 @@
     "role": null
   },
   {
+    "status": "inativo",
     "name": "José Pereira",
     "email": "jose.pereira@example.com",
     "password": "senha789",
@@ -46,6 +49,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Ana Ferreira",
     "email": "ana.ferreira@example.com",
     "password": "senhaabc",
@@ -61,6 +65,7 @@
     "role": null
   },
   {
+    "status": "inativo",
     "name": "Pedro Gomes",
     "email": "pedro.gomes@example.com",
     "password": "senhaxyz",
@@ -76,6 +81,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Carla Oliveira",
     "email": "carla.oliveira@example.com",
     "password": "senhamno",
@@ -91,6 +97,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Lucas Santos",
     "email": "lucas.santos@example.com",
     "password": "senha123",
@@ -106,6 +113,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Juliana Lima",
     "email": "juliana.lima@example.com",
     "password": "senha456",
@@ -121,6 +129,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Fernando Souza",
     "email": "fernando.souza@example.com",
     "password": "senha789",
@@ -137,6 +146,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Patricia Oliveira",
     "email": "patricia.oliveira@example.com",
     "password": "senhaabc",
@@ -152,6 +162,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Rafael Silva",
     "email": "rafael.silva@example.com",
     "password": "senhaxyz",
@@ -167,6 +178,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Mariana Costa",
     "email": "mariana.costa@example.com",
     "password": "senhamno",
@@ -182,6 +194,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Guilherme Santos",
     "email": "guilherme.santos@example.com",
     "password": "senha123",
@@ -197,6 +210,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Larissa Lima",
     "email": "larissa.lima@example.com",
     "password": "senha456",
@@ -212,6 +226,7 @@
     "role": null
   },
   {
+    "status": "ativo",
     "name": "Rodrigo Oliveira",
     "email": "rodrigo.oliveira@example.com",
     "password": "senha789",
