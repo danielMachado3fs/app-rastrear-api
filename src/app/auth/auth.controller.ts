@@ -4,14 +4,14 @@ import { User } from '../usuario/entities/user.entity';
 import { AuthDto, UpdatePasswordDto } from './auth.dto';
 import { AuthService } from './auth.service';
 
-@Controller()
+@Controller('signin')
 export class AuthController {
   constructor(
     @Inject(AuthService) private authService: AuthService,
     @Inject(forwardRef(() => TransactionService)) private readonly transactionService: TransactionService,
   ){}
 
-  @Post()
+  @Post('authenticate')
   async authenticate(@Body() body: AuthDto): Promise<User>{
     return await this.authService.authenticate(body);
   }

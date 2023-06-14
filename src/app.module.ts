@@ -26,8 +26,11 @@ import { TransactionModule } from './utils/transactions/transaction.module';
         DatabaseModule,
         UserModule,
         RoleModule,
-        TransactionModule,
         VehicleModule,
+        TransactionModule,
+        AuthModule,
+        SeedModule,
+        ChecklistModule,
     ],
 })
 export class AppModule {}

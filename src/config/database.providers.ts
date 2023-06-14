@@ -1,3 +1,8 @@
+import { ChecklistVehicle } from 'src/app/checklist/entities/checklist-vehicle.entity';
+import { Checklist } from 'src/app/checklist/entities/checklist.entity';
+import { Role } from 'src/app/grupo/entities/role.entity';
+import { User } from 'src/app/usuario/entities/user.entity';
+import { Vehicle } from 'src/app/veiculo/entities/vehicle.entity';
 import { DataSource } from 'typeorm';
 import { DATA_SOURCE } from './constants';
 
@@ -11,9 +16,9 @@ if (process.env.NODE_ENV != 'test') {
     password: '',
     host: 'localhost',
     port: 3306,
-    // entities: [User, Role, Vehicle, Checklist],
-    entities: [__dirname + '/../../**/*.entity.{js,ts}'],
-    migrations: ['/../migrations/*.js'],
+    entities: [User, Role, Vehicle, Checklist, ChecklistVehicle],
+    // entities: [__dirname + '/../../**/*.entity.{js,ts}'],
+    migrations: [__dirname + '/../../**/*-migration.js'],
     synchronize: false,
     migrationsRun: false,
     // database: process.env.DATABASE_NAME,

@@ -22,8 +22,8 @@ export class Checklist extends TimestampEntity implements IChecklist{
 
   @Column({
     type: 'json',
-    nullable: false,
-    default: []
+    nullable: true,
+    default: null
   })
   options: IChecklistOptions[];
 }

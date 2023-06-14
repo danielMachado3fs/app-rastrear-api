@@ -24,9 +24,8 @@ export class AuthService {
         valor: email,
       });
     }
-    const salt = await bcrypt.genSalt();
-    const passwordProps = await bcrypt.hash(password, salt);
-    if(passwordProps == user.password) return user;
+    
+    if(await bcrypt.compare(password, user.password)) return user;
     throw new BadRequestException('Usuário ou senha incorretos');
   }
   
