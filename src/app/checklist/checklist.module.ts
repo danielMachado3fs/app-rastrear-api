@@ -8,6 +8,7 @@ import { checklistProviders, checklistVehicleProviders } from './entities/checkl
 @Module({
   imports: [DatabaseModule, forwardRef(() => VehicleModule)],
   controllers: [ChecklistController],
-  providers: [ChecklistService, ...checklistProviders, ...checklistVehicleProviders]
+  providers: [ChecklistService, ...checklistProviders, ...checklistVehicleProviders],
+  exports: [ChecklistService]
 })
 export class ChecklistModule {}

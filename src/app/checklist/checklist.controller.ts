@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { TypesVehicles } from 'src/common/types';
 import { ChecklistService } from './checklist.service';
 import { CreateChecklistDto, UpdateChecklistDto } from './create-checklist.dto';
 
@@ -16,9 +17,9 @@ export class ChecklistController {
     return this.checklistService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.checklistService.findOne(+id);
+  @Get(':typeVehicle')
+  async findOne(@Param('typeVehicle') typeVehicle: TypesVehicles) {
+    return await this.checklistService.findOneChecklist(typeVehicle);
   }
 
   @Patch(':id')

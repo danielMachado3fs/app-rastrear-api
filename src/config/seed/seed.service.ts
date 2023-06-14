@@ -1,4 +1,5 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
+import { ChecklistService } from 'src/app/checklist/checklist.service';
 import { TransactionService } from 'src/utils/transactions/transaction.service';
 import { RoleService } from '../../app/grupo/role.service';
 import { UserService } from '../../app/usuario/user.service';
@@ -11,15 +12,17 @@ export class SeedService {
     @Inject(RoleService) private roleService: RoleService,
     @Inject(UserService) private userService: UserService,
     @Inject(VehicleService) private vehicleService: VehicleService,
+    @Inject(ChecklistService) private checklistService: ChecklistService,
     @Inject(TransactionService) private transaction: TransactionService
   ){}
 
   async seed(){
     this.logger.debug('Iniciando seeder');
-    await this.seedMigration();
+    // await this.seedMigration();
     // await this.seedRoles();
     // await this.seedUsers();
     // await this.seedVehicles();
+    await this.seedChecklist();
   }
 
   async seedMigration(){
@@ -56,5 +59,10 @@ export class SeedService {
   async seedVehicles(){
     const vehicles = await this.vehicleService.seed();
     this.logger.debug(`Criados ${vehicles.length} veiculos`);
+  }
+
+  async seedChecklist(){
+    const vehicles = await this.checklistService.seed();
+    this.logger.debug(`Criados ${vehicles.length} checklist`);
   }
 }

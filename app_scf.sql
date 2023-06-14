@@ -26,11 +26,12 @@ CREATE TABLE `checklist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `typeVehicle` enum('passeio','caminhonete','caminhao','carreta','van') NOT NULL,
   `options` longtext DEFAULT NULL,
+  `commonOptions` longtext DEFAULT NULL,
   `createdAt` datetime(6) NOT NULL DEFAULT current_timestamp(6),
   `updatedAt` datetime(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `deletedAt` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +40,7 @@ CREATE TABLE `checklist` (
 
 LOCK TABLES `checklist` WRITE;
 /*!40000 ALTER TABLE `checklist` DISABLE KEYS */;
+INSERT INTO `checklist` VALUES (1,'passeio','[{\"title\":\"Airbags em bom estado?\"},{\"title\":\"Retrovisor interno em bom estado?\"},{\"title\":\"Possui algum luz de alerta no painel?\"},{\"title\":\"Sistema de alarme em bom estado?\"}]','[{\"title\":\"Pneus calibrados e em bom estado?\"},{\"title\":\"Níveis de óleo, água e fluidos normais?\"},{\"title\":\"Limpadores de para-brisa funcionando corretamente?\"},{\"title\":\"Faróis, lanternas e luzes de freio em bom funcionamento?\"}]','2023-06-14 14:04:09.152402','2023-06-14 14:04:09.152402',NULL),(2,'caminhonete','[{\"title\":\"Sistema de tração nas quatro rodas funcionando?\"},{\"title\":\"Caçamba com proteção em bom estado?\"},{\"title\":\"Engate de reboque em bom estado?\"},{\"title\":\"Barras de proteção lateral  em bom estado?\"}]','[{\"title\":\"Pneus calibrados e em bom estado?\"},{\"title\":\"Níveis de óleo, água e fluidos normais?\"},{\"title\":\"Limpadores de para-brisa funcionando corretamente?\"},{\"title\":\"Faróis, lanternas e luzes de freio em bom funcionamento?\"}]','2023-06-14 14:04:09.155144','2023-06-14 14:04:09.155144',NULL),(3,'carreta','[{\"title\":\"Eixos tandem apresenta alguma avaria?\"},{\"title\":\"Sistema de freio eletrônico ativando normalmente?\"},{\"title\":\"Sistema de suspensão a ar funcionando normalmente?\"},{\"title\":\"Sistema de iluminação adequado?\"}]','[{\"title\":\"Pneus calibrados e em bom estado?\"},{\"title\":\"Níveis de óleo, água e fluidos normais?\"},{\"title\":\"Limpadores de para-brisa funcionando corretamente?\"},{\"title\":\"Faróis, lanternas e luzes de freio em bom funcionamento?\"}]','2023-06-14 14:04:09.156479','2023-06-14 14:04:09.156479',NULL),(4,'van','[{\"title\":\"Possui bancos adicionais para passageiros?\"},{\"title\":\"Porta lateral deslizante em bom estado?\"},{\"title\":\"Climatizador de ar funcionando normalmente?\"}]','[{\"title\":\"Pneus calibrados e em bom estado?\"},{\"title\":\"Níveis de óleo, água e fluidos normais?\"},{\"title\":\"Limpadores de para-brisa funcionando corretamente?\"},{\"title\":\"Faróis, lanternas e luzes de freio em bom funcionamento?\"}]','2023-06-14 14:04:09.161220','2023-06-14 14:04:09.161220',NULL),(5,'caminhao','[{\"title\":\"Freio a ar ativando normalmente?\"},{\"title\":\"Bloqueio de diferencial ativando normalmente\"},{\"title\":\"Sistema de câmera de ré em bom estado?\"},{\"title\":\"Está com pneus adequados para carga?\"}]','[{\"title\":\"Pneus calibrados e em bom estado?\"},{\"title\":\"Níveis de óleo, água e fluidos normais?\"},{\"title\":\"Limpadores de para-brisa funcionando corretamente?\"},{\"title\":\"Faróis, lanternas e luzes de freio em bom funcionamento?\"}]','2023-06-14 14:04:09.155560','2023-06-14 14:04:09.155560',NULL);
 /*!40000 ALTER TABLE `checklist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-14  9:40:29
+-- Dump completed on 2023-06-14 14:04:26

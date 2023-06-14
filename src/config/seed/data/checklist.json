@@ -1,0 +1,84 @@
+[
+  {
+    "typeVehicle": "passeio",
+    "options": [
+      {
+        "title": "Airbags em bom estado?"
+      },
+      {
+        "title": "Retrovisor interno em bom estado?"
+      },
+      {
+        "title": "Possui algum luz de alerta no painel?"
+      },
+      {
+        "title": "Sistema de alarme em bom estado?"
+      }
+    ]
+  },
+  {
+    "typeVehicle": "caminhonete",
+    "options": [
+      {
+        "title": "Sistema de tração nas quatro rodas funcionando?"
+      },
+      {
+        "title": "Caçamba com proteção em bom estado?"
+      },
+      {
+        "title": "Engate de reboque em bom estado?"
+      },
+      {
+        "title": "Barras de proteção lateral  em bom estado?"
+      }
+    ]
+  },
+  {
+    "typeVehicle": "caminhao",
+    "options": [
+      {
+        "title": "Freio a ar ativando normalmente?"
+      },
+      {
+        "title": "Bloqueio de diferencial ativando normalmente"
+      },
+      {
+        "title": "Sistema de câmera de ré em bom estado?"
+      },
+      {
+        "title": "Está com pneus adequados para carga?"
+      }
+    ]
+  },
+  {
+    "typeVehicle": "carreta",
+    "options": [
+      {
+        "title": "Eixos tandem apresenta alguma avaria?"
+      },
+      {
+        "title": "Sistema de freio eletrônico ativando normalmente?"
+      },
+      {
+        "title": "Sistema de suspensão a ar funcionando normalmente?"
+      },
+      {
+        "title": "Sistema de iluminação adequado?"
+      }
+    ]
+  },
+  {
+    "typeVehicle": "van",
+    "options": [
+      {
+        "title": "Possui bancos adicionais para passageiros?"
+      },
+      {
+        "title": "Porta lateral deslizante em bom estado?"
+      },
+      {
+        "title": "Climatizador de ar funcionando normalmente?"
+      }
+    ]
+  }
+]
