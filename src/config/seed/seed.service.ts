@@ -16,10 +16,10 @@ export class SeedService {
 
   async seed(){
     this.logger.debug('Iniciando seeder');
-    // await this.seedMigration();
+    await this.seedMigration();
     // await this.seedRoles();
     // await this.seedUsers();
-    await this.seedVehicles();
+    // await this.seedVehicles();
   }
 
   async seedMigration(){
