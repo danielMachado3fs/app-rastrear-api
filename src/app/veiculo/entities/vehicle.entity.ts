@@ -46,7 +46,7 @@ export class Vehicle implements IVehicle {
   status: TypesStatus;
 
   @Column({nullable: true, default: null})
-  imagem: string;
+  image?: string;
 
   @OneToMany(() => ChecklistVehicle, (checklist) => checklist.vehicle)
   checklist: Checklist[]
