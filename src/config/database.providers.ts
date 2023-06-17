@@ -7,7 +7,7 @@ import { DataSource } from 'typeorm';
 import { DATA_SOURCE } from './constants';
 
 let config: any;
-if (process.env.NODE_ENV != 'test') {
+if (process.env.NODE_ENV == 'development') {
   console.log(__dirname + '/../../**/*.entity.{js,ts}');
   config = {
     database: 'app_scf',

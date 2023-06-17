@@ -4,6 +4,7 @@ import { TypesVehicles, typesVehicles } from "../../../common/types";
 
 export interface IChecklistOptions{
   title: string;
+  fileName: string;
 }
 
 export interface IChecklist {
@@ -37,15 +38,19 @@ export class Checklist extends TimestampEntity implements IChecklist{
 
 export const commonOptions = [
   {
+    "fileName": "commonPneus",
     "title": "Pneus calibrados e em bom estado?"
   },
   {
+    "fileName": "commonFluidos",
     "title": "Níveis de óleo, água e fluidos normais?"
   },
   {
+    "fileName": "commonParabrisa",
     "title": "Limpadores de para-brisa funcionando corretamente?"
   },
   {
+    "fileName": "commonIluminacao",
     "title": "Faróis, lanternas e luzes de freio em bom funcionamento?"
   }
 ]

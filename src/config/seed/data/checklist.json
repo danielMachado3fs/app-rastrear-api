@@ -3,33 +3,42 @@
     "typeVehicle": "passeio",
     "options": [
       {
+        "fileName": "airbags",
         "title": "Airbags em bom estado?"
       },
       {
+        "fileName": "retrovisor",
         "title": "Retrovisor interno em bom estado?"
       },
       {
+        "fileName": "painel",
         "title": "Possui algum luz de alerta no painel?"
       },
       {
+        "fileName": "alarme",
         "title": "Sistema de alarme em bom estado?"
       }
     ]
+
   },
   {
     "typeVehicle": "caminhonete",
     "options": [
       {
+        "fileName": "tracao",
         "title": "Sistema de tração nas quatro rodas funcionando?"
       },
       {
+        "fileName": "cacamba",
         "title": "Caçamba com proteção em bom estado?"
       },
       {
+        "fileName": "reboque",
         "title": "Engate de reboque em bom estado?"
       },
       {
-        "title": "Barras de proteção lateral  em bom estado?"
+        "fileName": "barraProtecao",
+        "title": "Barras de proteção lateral em bom estado?"
       }
     ]
   },
@@ -37,15 +46,19 @@
     "typeVehicle": "caminhao",
     "options": [
       {
+        "fileName": "freioAr",
         "title": "Freio a ar ativando normalmente?"
       },
       {
+        "fileName": "diferencial",
         "title": "Bloqueio de diferencial ativando normalmente"
       },
       {
+        "fileName": "cameraRe",
         "title": "Sistema de câmera de ré em bom estado?"
       },
       {
+        "fileName": "pneusCarga",
         "title": "Está com pneus adequados para carga?"
       }
     ]
@@ -54,15 +67,19 @@
     "typeVehicle": "carreta",
     "options": [
       {
+        "fileName": "eixosTandem",
         "title": "Eixos tandem apresenta alguma avaria?"
       },
       {
+        "fileName": "freioEletronico",
         "title": "Sistema de freio eletrônico ativando normalmente?"
       },
       {
+        "fileName": "suspencaoAr",
         "title": "Sistema de suspensão a ar funcionando normalmente?"
       },
       {
+        "fileName": "iluminacao",
         "title": "Sistema de iluminação adequado?"
       }
     ]
@@ -71,12 +88,15 @@
     "typeVehicle": "van",
     "options": [
       {
+        "fileName": "bancos",
         "title": "Possui bancos adicionais para passageiros?"
       },
       {
+        "fileName": "portaLateral",
         "title": "Porta lateral deslizante em bom estado?"
       },
       {
+        "fileName": "climatizador",
         "title": "Climatizador de ar funcionando normalmente?"
       }
     ]
