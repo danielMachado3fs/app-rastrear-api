@@ -26,4 +26,26 @@ export class Checklist extends TimestampEntity implements IChecklist{
     default: null
   })
   options: IChecklistOptions[];
+
+  @Column({
+    type: 'json',
+    nullable: true,
+    default: null
+  })
+  commonOptions: IChecklistOptions[];
 }
+
+export const commonOptions = [
+  {
+    "title": "Pneus calibrados e em bom estado?"
+  },
+  {
+    "title": "Níveis de óleo, água e fluidos normais?"
+  },
+  {
+    "title": "Limpadores de para-brisa funcionando corretamente?"
+  },
+  {
+    "title": "Faróis, lanternas e luzes de freio em bom funcionamento?"
+  }
+]
