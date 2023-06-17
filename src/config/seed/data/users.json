@@ -1,6 +1,23 @@
 [
   {
     "status": "ativo",
+    "name": "Unileste Teste",
+    "email": "uni@gmail.com",
+    "password": "senha123",
+    "address": {
+      "street": "Rua A",
+      "cep": "12345-678",
+      "state": "Minas Gerais",
+      "city": "Coronel Fabriciano",
+      "neighborhoods": "Centro",
+      "number": "123",
+      "complement": "Campus"
+    },
+    "roleId": 1,
+    "role": null
+  },
+  {
+    "status": "ativo",
     "name": "João Silva",
     "email": "joao.silva@example.com",
     "password": "senha123",
