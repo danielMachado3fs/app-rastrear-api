@@ -8,8 +8,12 @@ export class ChecklistController {
   constructor(private readonly checklistService: ChecklistService) {}
 
   @Post()
-  create(@Body() createChecklistDto: CreateChecklistDto) {
-    return this.checklistService.create(createChecklistDto);
+  async create(@Body() createChecklistDto: CreateChecklistDto) {
+    //@ts-ignore
+    createChecklistDto.kmAtual = parseInt(createChecklistDto.kmAtual.split(' ')[0]);
+    const data = await this.checklistService.create(createChecklistDto)
+    console.log(data);
+    return data;
   }
 
   @Get()

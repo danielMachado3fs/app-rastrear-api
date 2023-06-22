@@ -1,18 +1,24 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { TypesVehicles } from 'src/common/types';
-import { CHECKLIST_REPOSITORY } from 'src/config/constants';
+import { CHECKLIST_REPOSITORY, CHECKLIST_VEHICLE_REPOSITORY } from 'src/config/constants';
 import { Repository } from 'typeorm';
 import { CreateChecklistDto, UpdateChecklistDto } from './create-checklist.dto';
+import { ChecklistVehicle } from './entities/checklist-vehicle.entity';
 import { Checklist, commonOptions } from './entities/checklist.entity';
 
 @Injectable()
 export class ChecklistService {
   constructor(
-    @Inject(CHECKLIST_REPOSITORY) private checklistModel: Repository<Checklist>
+    @Inject(CHECKLIST_REPOSITORY) private checklistModel: Repository<Checklist>,
+    @Inject(CHECKLIST_VEHICLE_REPOSITORY) private checklistVehicleModel: Repository<ChecklistVehicle>
   ){}
 
-  create(createChecklistDto: CreateChecklistDto) {
-    return 'This action adds a new checklist';
+  async create(createChecklistDto: CreateChecklistDto) {
+    try {
+      return await this.checklistVehicleModel.save(createChecklistDto);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   findAll() {
