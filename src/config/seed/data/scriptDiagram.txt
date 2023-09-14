@@ -1,0 +1,150 @@
+
+Enum "checklist_typeVehicle_enum" {
+    "passeio"
+    "caminhonete"
+    "caminhao"
+    "carreta"
+    "van"
+  }
+  
+  Enum "checklist_vehicle_type_enum" {
+    "entrada"
+    "saida"
+  }
+  
+  Enum "users_status_enum" {
+    "ativo"
+    "inativo"
+  }
+  
+  Enum "vehicles_type_enum" {
+    "passeio"
+    "caminhonete"
+    "caminhao"
+    "carreta"
+    "van"
+  }
+  
+  Enum "vehicles_status_enum" {
+    "ativo"
+    "inativo"
+  }
+  
+  Enum "status_tickets" {
+    "aguardando_aprovacao"
+    "aprovado"
+    "utilizado"
+  }
+  
+  Table "checklist" {
+    "createdAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "updatedAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "deletedAt" datetime(6) [default: NULL]
+    "id" int(11) [pk, not null, increment]
+    "typeVehicle" checklist_typeVehicle_enum [not null]
+    "options" longtext [default: NULL]
+    "commonOptions" longtext [default: NULL]
+  }
+  
+  Table "checklist_vehicle" {
+    "createdAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "updatedAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "deletedAt" datetime(6) [default: NULL]
+    "id" int(11) [pk, not null, increment]
+    "kmAtual" int(11) [not null]
+    "type" checklist_vehicle_type_enum [not null]
+    "options" longtext [default: NULL]
+    "vehicleId" int(11) [not null]
+    "userId" int(11) [not null]
+  
+  Indexes {
+    vehicleId [name: "FK_ecc3514abc910b0c0653e69822f"]
+  }
+  }
+  
+  Table "roles" {
+    "createdAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "updatedAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "deletedAt" datetime(6) [default: NULL]
+    "id" int(11) [pk, not null, increment]
+    "name" varchar(255) [not null]
+    "permissions" text [default: NULL]
+  }
+  
+  Table "users" {
+    "createdAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "updatedAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "deletedAt" datetime(6) [default: NULL]
+    "id" int(11) [pk, not null, increment]
+    "name" varchar(255) [not null]
+    "email" varchar(255) [not null]
+    "password" varchar(255) [not null]
+    "status" users_status_enum [not null, default: "ativo"]
+    "roleId" int(11) [default: NULL]
+    "street" varchar(255) [default: NULL]
+    "cep" varchar(20) [default: NULL]
+    "state" varchar(4) [default: NULL]
+    "city" varchar(255) [default: NULL]
+    "neighborhoods" varchar(255) [default: NULL]
+    "number" varchar(255) [default: NULL]
+    "complement" varchar(255) [default: NULL]
+  
+  Indexes {
+    roleId [name: "FK_368e146b785b574f42ae9e53d5e"]
+  }
+  }
+  
+  Table "vehicles" {
+    "id" int(11) [pk, not null, increment]
+    "model" varchar(255) [not null]
+    "yearManufacture" varchar(255) [not null]
+    "plate" varchar(255) [not null]
+    "dateAcquisition" datetime [not null]
+    "type" vehicles_type_enum [not null]
+    "status" vehicles_status_enum [not null, default: "ativo"]
+    "image" varchar(255) [default: NULL]
+    "createdAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "updatedAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "deletedAt" datetime(6) [default: NULL]
+  }
+  
+  Table "tickets" {
+    "id" int(11) [pk, not null, increment]
+    "vehicleId" int(11) [not null]
+    "driverId" int(11) [not null]
+    "gasStationId" int(11) [default: NULL]
+    "approvedById" int(11) [not null]
+    "value" int(11) [not null]
+    "approvalDate" datetime [not null]
+    "requestDate" datetime [not null]
+    "status" status_tickets [not null, default: "aguardando_aprovacao"]
+    "createdAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "updatedAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "deletedAt" datetime(6) [default: NULL]
+  }
+  
+  Table "gas_stations" {
+    "id" int(11) [pk, not null, increment]
+    "name" varchar(255) [not null]
+    "email" varchar(255) [not null]
+    "status" users_status_enum [not null, default: "ativo"]
+    "street" varchar(255) [default: NULL]
+    "cep" varchar(20) [default: NULL]
+    "state" varchar(4) [default: NULL]
+    "city" varchar(255) [default: NULL]
+    "neighborhoods" varchar(255) [default: NULL]
+    "number" varchar(255) [default: NULL]
+    "complement" varchar(255) [default: NULL]
+    "createdAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "updatedAt" datetime(6) [not null, default: `current_timestamp(6)`]
+    "deletedAt" datetime(6) [default: NULL]
+  }
+  
+  
+  Ref: checklist_vehicle.vehicleId > vehicles.id [update: no action, delete: no action]
+  Ref: checklist_vehicle.userId > users.id [update: no action, delete: no action]
+  Ref: roles.id < users.roleId [update: no action, delete: no action]
+  Ref: tickets.vehicleId > vehicles.id [update: no action, delete: no action]
+  Ref: tickets.driverId > users.id [update: no action, delete: no action]
+  Ref: tickets.approvedById > users.id [update: no action, delete: no action]
+  Ref: tickets.gasStationId > gas_stations.id [update: no action, delete: no action]

@@ -19,7 +19,7 @@ if (process.env.NODE_ENV == 'development') {
     entities: [User, Role, Vehicle, Checklist, ChecklistVehicle],
     // entities: [__dirname + '/../../**/*.entity.{js,ts}'],
     migrations: [__dirname + '/../../**/*-migration.js'],
-    synchronize: false,
+    synchronize: true,
     migrationsRun: false,
     // database: process.env.DATABASE_NAME,
     // type: process.env.DATABASE_TYPE,
@@ -36,7 +36,7 @@ if (process.env.NODE_ENV == 'development') {
 export const connectionSource = new DataSource(config);
 
 //inicialisa a conecção com o banco de dados e exporta o provider DATA_SOURCE que será provido
-//pelo modulo databaseModule, que por ser globai, esse DATA_SOURCE poderá ser usado em qualquer lugar
+//pelo modulo databaseModule, que por ser global, esse DATA_SOURCE poderá ser usado em qualquer lugar
 export const databaseProviders = [
   {
     provide: DATA_SOURCE,
