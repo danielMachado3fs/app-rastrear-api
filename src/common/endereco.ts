@@ -17,7 +17,7 @@ export class Adress implements IAdress {
     street: string;
     @Column({length: 20, nullable: true, default: null})
     cep: string;
-    @Column({length: 4, nullable: true, default: null})
+    @Column({length: 100, nullable: true, default: null})
     state: string;
     @Column({length: 255, nullable: true, default: null})
     city: string;
