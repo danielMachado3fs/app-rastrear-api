@@ -5,7 +5,9 @@ import 'dotenv/config';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule,{
+    logger: ['debug','error','log','verbose']
+  });
   app.setGlobalPrefix('/api'); //seta o prefixo padrão para acessar as rotas
   app.useGlobalPipes(new ValidationPipe({ transform: true })); //ativa os validadores de parâmetros
 
