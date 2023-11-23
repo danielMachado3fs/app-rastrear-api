@@ -8,30 +8,32 @@ import { DATA_SOURCE } from './constants';
 
 let config: any;
 if (process.env.NODE_ENV == 'development') {
-  console.log(__dirname + '/../../**/*.entity.{js,ts}');
   config = {
-    database: 'app_scf',
-    type: 'mariadb',
-    username: 'root',
-    password: '',
-    host: 'localhost',
-    port: 3306,
-    entities: [User, Role, Vehicle, Checklist, ChecklistVehicle],
-    // entities: [__dirname + '/../../**/*.entity.{js,ts}'],
-    migrations: [__dirname + '/../../**/*-migration.js'],
-    synchronize: true,
-    migrationsRun: false,
+      database: 'app_scf',
+      type: 'mariadb',
+      username: 'root',
+      password: 'root',
+      host: 'localhost',
+      port: 3306,
+      entities: [User, Role, Vehicle, Checklist, ChecklistVehicle],
+      // entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+      migrations: [__dirname + '/../../**/*-migration.js'],
+      synchronize: false,
+      migrationsRun: false,
     // database: process.env.DATABASE_NAME,
     // type: process.env.DATABASE_TYPE,
     // username: process.env.DATABASE_USERNAME,
-    // password: '',
+    // password: process.env.DATABASE_PASSWORD,
     // host: process.env.DATABASE_HOST,
-    // port: Number(process.env.PORT),
+    // port: Number(process.env.DATABASE_PORT),
     // entities: [__dirname + process.env.ENTITIES],
     // migrations: [__dirname + process.env.MIGRATIONS],
-    // sincronize: true,
+    // // entities: [User, Role, Vehicle, Checklist, ChecklistVehicle],
+    // // migrations: [__dirname + '/../../**/*-migration.js'],
+    // sincronize: false,
   };
 }
+console.log(config);
 
 export const connectionSource = new DataSource(config);
 

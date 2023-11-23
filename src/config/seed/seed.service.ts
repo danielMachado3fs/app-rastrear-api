@@ -20,8 +20,8 @@ export class SeedService {
     this.logger.debug('Iniciando seeder');
     // await this.seedMigration();
     // await this.seedRoles();
-    // await this.seedUsers();
-    // await this.seedVehicles();
+    await this.seedUsers();
+    await this.seedVehicles();
     await this.seedChecklist();
   }
 
