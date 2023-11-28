@@ -6,7 +6,7 @@
     "dateAcquisition": "2020-06-15T00:00:00.000Z",
     "type": "passeio",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\car.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/car.png"
   },
   {
     "model": "Onix",
@@ -15,7 +15,7 @@
     "dateAcquisition": "2020-10-20T00:00:00.000Z",
     "type": "passeio",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\car.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/car.png"
   },
   {
     "model": "Corolla",
@@ -24,7 +24,7 @@
     "dateAcquisition": "2021-12-10T00:00:00.000Z",
     "type": "passeio",
     "status": "inativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\car.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/car.png"
   },
   {
     "model": "Hilux",
@@ -33,7 +33,7 @@
     "dateAcquisition": "2019-03-05T00:00:00.000Z",
     "type": "caminhonete",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck2.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck2.png"
   },
   {
     "model": "S10",
@@ -42,7 +42,7 @@
     "dateAcquisition": "2022-06-30T00:00:00.000Z",
     "type": "caminhonete",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck3.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck3.png"
   },
   {
     "model": "HR",
@@ -51,7 +51,7 @@
     "dateAcquisition": "2018-02-12T00:00:00.000Z",
     "type": "caminhao",
     "status": "inativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck4.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck4.png"
   },
   {
     "model": "Volvo FH",
@@ -60,7 +60,7 @@
     "dateAcquisition": "2020-08-22T00:00:00.000Z",
     "type": "carreta",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck.png"
   },
   {
     "model": "Scania R440",
@@ -69,7 +69,7 @@
     "dateAcquisition": "2022-09-05T00:00:00.000Z",
     "type": "carreta",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck.png"
   },
   {
     "model": "Mercedes-Benz Actros",
@@ -78,7 +78,7 @@
     "dateAcquisition": "2020-04-15T00:00:00.000Z",
     "type": "carreta",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck.png"
   },
   {
     "model": "Fiesta",
@@ -87,7 +87,7 @@
     "dateAcquisition": "2016-07-08T00:00:00.000Z",
     "type": "passeio",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\car.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/car.png"
   },
   {
     "model": "Civic",
@@ -96,7 +96,7 @@
     "dateAcquisition": "2023-05-01T00:00:00.000Z",
     "type": "passeio",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\car.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/car.png"
   },
   {
     "model": "Amarok",
@@ -105,7 +105,7 @@
     "dateAcquisition": "2022-03-10T00:00:00.000Z",
     "type": "caminhonete",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck2.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck2.png"
   },
   {
     "model": "Ducato",
@@ -114,7 +114,7 @@
     "dateAcquisition": "2019-07-18T00:00:00.000Z",
     "type": "van",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck3.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck3.png"
   },
   {
     "model": "Bitrem",
@@ -123,7 +123,7 @@
     "dateAcquisition": "2022-10-25T00:00:00.000Z",
     "type": "carreta",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\truck.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/truck.png"
   },
   {
     "model": "Uno",
@@ -132,6 +132,6 @@
     "dateAcquisition": "2017-09-06T00:00:00.000Z",
     "type": "passeio",
     "status": "ativo",
-    "image": "D:\\Projects\\api\\app-rastrear-api\\src\\public\\vehicles\\car.png"
+    "image": "/home/dmachado/Projects/app-rastrear/api/src/public/vehicles/car.png"
   }
 ]
